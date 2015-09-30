@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="null" class="org.apache.log4j.varia.NullAppender">
+        <layout class="org.apache.log4j.SimpleLayout"/>
+    </appender>
+
+    <appender name="reset" class="com.gainmatrix.lib.log4j.reset.Log4jResetAppender">
+        <param name="code" value="resetAll"/>
+    </appender>
+
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{MMM dd HH:mm:ss.SSSS zzz}] [%t] %-5p %c:\n%m\n" />
+        </layout>
+    </appender>
+
+    <appender name="file1" class="org.apache.log4j.FileAppender">
+        <param name="threshold" value="ALL"/>
+        <param name="append" value="false"/>
+        <param name="file" value="${java.io.tmpdir}/gainmatrix-lib-log1.log"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss z} %c:%L%n%p: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="file2" class="org.apache.log4j.FileAppender">
+        <param name="threshold" value="ALL"/>
+        <param name="append" value="false"/>
+        <param name="file" value="${java.io.tmpdir}/gainmatrix-lib-log2.log"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss z} %c:%L%n%p: %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="file3" class="org.apache.log4j.FileAppender">
+        <param name="threshold" value="ALL"/>
+        <param name="append" value="false"/>
+        <param name="file" value="${java.io.tmpdir}/gainmatrix-lib-log3.log"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss z} %c:%L%n%p: %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.gainmatrix.lib.log4j.45a6fef0d959" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="file1"/>
+    </logger>
+
+    <logger name="com.gainmatrix.lib.log4j.f54a4ea0d149" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="file2"/>
+    </logger>
+
+    <logger name="com.gainmatrix.lib.log4j.a18da52ff52d" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="reset"/>
+    </logger>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="null"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="file1"/>
+        <appender-ref ref="file3"/>
+    </root>
+
+</log4j:configuration>
+

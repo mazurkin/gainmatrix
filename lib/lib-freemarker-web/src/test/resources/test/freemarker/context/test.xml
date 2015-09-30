@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="freemarkerConfigurationFactory" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactory">
+        <property name="preTemplateLoaders">
+            <array>
+                <bean class="com.gainmatrix.lib.freemarker.core.SpringContextTemplateLoader">
+                    <property name="templateLoaderPath" value="classpath:/"/>
+                </bean>
+            </array>
+        </property>
+        <property name="preferFileSystemAccess" value="true"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="default_encoding">UTF-8</prop>
+                <prop key="strict_syntax">true</prop>
+                <prop key="whitespace_stripping">true</prop>
+                <prop key="tag_syntax">auto_detect</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="freemarkerConfiguration" factory-bean="freemarkerConfigurationFactory" factory-method="createConfiguration"/>
+
+    <bean id="freemarkerTextTemplateFactory" class="com.gainmatrix.lib.freemarker.core.template.FreemarkerTextTemplateFactory">
+        <property name="configuration" ref="freemarkerConfiguration"/>
+        <property name="prefix" value="/test/freemarker/template/"/>
+        <property name="suffix" value=".ftl"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gainmatrix</groupId>
+        <artifactId>gainmatrix-maven-environment</artifactId>
+        <version>1.4</version>
+    </parent>
+
+    <groupId>com.gainmatrix</groupId>
+    <artifactId>gainmatrix-maven-findbugs</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>GainMatrix findbugs settings</name>
+    <url>http://code.google.com/p/gainmatrix/</url>
+
+    <description>
+    <![CDATA[
+        Module with Findbugs setting files packed in jar
+    ]]>
+    </description>
+
+    <scm>
+        <connection>scm:git:https://code.google.com/p/gainmatrix.maven-findbugs/</connection>
+        <developerConnection>scm:git:https://code.google.com/p/gainmatrix.maven-findbugs/</developerConnection>
+    </scm>
+
+    <organization>
+        <name>GainMatrix Open-Source</name>
+        <url>http://code.google.com/p/gainmatrix/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <comments>A business-friendly OSS license</comments>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>gainmatrix</id>
+            <name>GainMatrix Dev Team</name>
+            <email>dev@gainmatrix.com</email>
+        </developer>
+    </developers>
+
+</project>

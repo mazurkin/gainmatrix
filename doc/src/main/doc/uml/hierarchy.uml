@@ -1,0 +1,85 @@
+' =============================================================================
+' Maven artifacts
+' =============================================================================
+
+@startuml img/hierarchy-maven.png
+
+scale 600 width
+title Maven artefacts
+
+[gainmatrix-maven-environment]
+[gainmatrix-maven-parent]
+[gainmatrix-maven-log4j]
+[gainmatrix-maven-checkstyle]
+
+[gainmatrix-maven-parent] --|> [gainmatrix-maven-environment]
+[gainmatrix-maven-checkstyle] --|> [gainmatrix-maven-environment]
+[gainmatrix-maven-pmd] --|> [gainmatrix-maven-environment]
+[gainmatrix-maven-findbugs] --|> [gainmatrix-maven-environment]
+[gainmatrix-maven-environment] <|-- [gainmatrix-maven-log4j]
+
+[gainmatrix-maven-parent] .> [gainmatrix-maven-checkstyle] : uses
+[gainmatrix-maven-parent] .> [gainmatrix-maven-pmd] : uses
+[gainmatrix-maven-parent] .> [gainmatrix-maven-findbugs] : uses
+
+[All Java projects] --|> [gainmatrix-maven-parent]
+
+note right of [gainmatrix-maven-environment]
+    Base POM-artefact for
+    all other POM-artefacts
+end note
+
+note bottom of [gainmatrix-maven-parent]
+    Base Maven descriptor for
+    all Java projects
+end note
+
+note top of [gainmatrix-maven-checkstyle]
+    Checkstyle configuration
+end note
+
+note top of [gainmatrix-maven-pmd]
+    PMD configuration
+end note
+
+note top of [gainmatrix-maven-findbugs]
+    FindBugs configuration
+end note
+
+note left of [gainmatrix-maven-log4j]
+    Introduces slf4j-log4j12 and log4j
+    into classpath. Also includes
+    simple "/log4j.xml". Used for
+    proper logging in Maven plugins.
+end note
+
+@enduml
+
+' =============================================================================
+' GainMatrix libraries
+' =============================================================================
+
+@startuml img/hierarchy-libraries.png
+
+scale 600 width
+title GainMatrix libraries
+
+[gainmatrix-lib-beans]
+[gainmatrix-lib-spring]
+[gainmatrix-lib-web]
+[gainmatrix-lib-liquibase]
+[gainmatrix-lib-jpa]
+[gainmatrix-lib-freemarker-core]
+[gainmatrix-lib-freemarker-web]
+[gainmatrix-lib-cache]
+[gainmatrix-lib-log4j]
+
+[gainmatrix-lib-spring] --> [gainmatrix-lib-beans]
+[gainmatrix-lib-web] --> [gainmatrix-lib-spring]
+[gainmatrix-lib-jpa] --> [gainmatrix-lib-spring]
+[gainmatrix-lib-freemarker-core] --> [gainmatrix-lib-spring]
+[gainmatrix-lib-freemarker-web] --> [gainmatrix-lib-freemarker-core]
+[gainmatrix-lib-freemarker-web] --> [gainmatrix-lib-web]
+[gainmatrix-lib-cache] --> [gainmatrix-lib-beans]
+
+@enduml

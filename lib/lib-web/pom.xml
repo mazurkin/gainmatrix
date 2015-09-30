@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gainmatrix</groupId>
+        <artifactId>gainmatrix-maven-parent</artifactId>
+        <version>1.13-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.gainmatrix</groupId>
+    <artifactId>gainmatrix-lib-web</artifactId>
+    <version>1.5-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>GainMatrix web library</name>
+    <url>http://code.google.com/p/gainmatrix/</url>
+
+    <description>
+    <![CDATA[
+        Additional classes to extend Spring Framework MVC Libraries and Servlet
+        helper classes
+    ]]>
+    </description>
+
+    <properties>
+        <!-- Dependencies -->
+        <com.gainmatrix.lib-beans.version>1.5-SNAPSHOT</com.gainmatrix.lib-beans.version>
+        <com.gainmatrix.lib-spring.version>1.5-SNAPSHOT</com.gainmatrix.lib-spring.version>
+        <org.springframework.version>3.2.0.RELEASE</org.springframework.version>
+        <org.springframework.security.version>3.1.1.RELEASE</org.springframework.security.version>
+        <org.apache.commons.io.version>2.0.1</org.apache.commons.io.version>
+        <org.log4j.version>1.2.16</org.log4j.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:https://code.google.com/p/gainmatrix.lib-web/</connection>
+        <developerConnection>scm:git:https://code.google.com/p/gainmatrix.lib-web/</developerConnection>
+    </scm>
+
+    <organization>
+        <name>GainMatrix Open-Source</name>
+        <url>http://code.google.com/p/gainmatrix/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <comments>A business-friendly OSS license</comments>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>gainmatrix</id>
+            <name>GainMatrix Dev Team</name>
+            <email>dev@gainmatrix.com</email>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <!-- GainMatrix -->
+        <dependency>
+            <groupId>com.gainmatrix</groupId>
+            <artifactId>gainmatrix-lib-beans</artifactId>
+            <version>${com.gainmatrix.lib-beans.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gainmatrix</groupId>
+            <artifactId>gainmatrix-lib-spring</artifactId>
+            <version>${com.gainmatrix.lib-spring.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Apache Commons -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${org.apache.commons.io.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Spring Framework (Web) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Spring Framework (Core) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Spring Security (optional) -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${org.springframework.security.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${org.springframework.security.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <!-- Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${org.log4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

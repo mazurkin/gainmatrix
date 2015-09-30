@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE checkstyle-packages PUBLIC "-//Puppy Crawl//DTD Package Names 1.0//EN" "http://www.puppycrawl.com/dtds/packages_1_0.dtd">
+<!-- See http://checkstyle.sourceforge.net/config.html#Packages for details -->
+<checkstyle-packages>
+    <package name="com.gainmatrix.lib.checkstyle"/>
+</checkstyle-packages>

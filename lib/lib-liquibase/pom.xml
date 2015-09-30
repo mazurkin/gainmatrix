@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gainmatrix</groupId>
+        <artifactId>gainmatrix-maven-parent</artifactId>
+        <version>1.13-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.gainmatrix</groupId>
+    <artifactId>gainmatrix-lib-liquibase</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>GainMatrix Liquibase library</name>
+    <url>http://code.google.com/p/gainmatrix/</url>
+
+    <description>
+    <![CDATA[
+        Additional classes to extend Liquibase library (http://www.liquibase.org/)
+    ]]>
+    </description>
+
+    <properties>
+        <!-- Dependencies -->
+        <org.liquibase.version>2.0.3</org.liquibase.version>
+        <org.springframework.version>3.1.1.RELEASE</org.springframework.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:https://code.google.com/p/gainmatrix.lib-liquibase/</connection>
+        <developerConnection>scm:git:https://code.google.com/p/gainmatrix.lib-liquibase/</developerConnection>
+    </scm>
+
+    <organization>
+        <name>GainMatrix Open-Source</name>
+        <url>http://code.google.com/p/gainmatrix/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <comments>A business-friendly OSS license</comments>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>gainmatrix</id>
+            <name>GainMatrix Dev Team</name>
+            <email>dev@gainmatrix.com</email>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <!-- Liquibase -->
+       <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${org.liquibase.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Spring Framework (optional) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+</project>
